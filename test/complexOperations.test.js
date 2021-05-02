@@ -1,6 +1,7 @@
 import 'jest';
 import * as complexOperations from './complexOperations';
 
+
 describe('complexOperation - Unit Tests', () => {
   describe('checkEmail', () => {
     it('test different data to a string', () => {
@@ -85,6 +86,10 @@ describe('complexOperation - Unit Tests', () => {
 
     it('test with two empty arrays', () => {
       expect(complexOperations.intersectionBetweenArrays([], [])).toStrictEqual('There are not matching elements');
+    });
+
+    it('test with not matching elements', () => {
+      expect(complexOperations.intersectionBetweenArrays([1,2], [3,4])).toStrictEqual('There are not matching elements');
     });
   });
 
