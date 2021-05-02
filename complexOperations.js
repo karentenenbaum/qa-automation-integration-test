@@ -84,16 +84,16 @@ export const calculateArea = (figure, number1, number2 = 0) => {
 //  * @param {number} number3
 //  * @returns {string}
 // */
-// export const sumGratherThan = (number1, number2, number3) => {
-//   if (!isNumber(number1) || !isNumber(number2) || !isNumber(number3)) {
-//     return 'The params should be numbers';
-//   }
-//   const sumResult = sum(number1, number2);
-//   if (sumResult > number3) {
-//     return `${sumResult} is grather than ${number3}`;
-//   }
-//   return `${sumResult} is less than ${number3}`;
-// }
+export const sumGratherThan = (number1, number2, number3) => {
+  if (!isNumber(number1) || !isNumber(number2) || !isNumber(number3)) {
+    return 'The params should be numbers';
+  }
+  const sumResult = sum(number1, number2);
+  if (sumResult > number3) {
+    return `${sumResult} is grather than ${number3}`;
+  }
+  return `${sumResult} is less than ${number3}`;
+}
 
 // // console.log(sumGratherThan());
 // // console.log(sumGratherThan([], undefined));
@@ -106,16 +106,16 @@ export const calculateArea = (figure, number1, number2 = 0) => {
 //  * @param {Array} array2
 //  * @returns {Array|string}
 // */
-// export const intersectionBetweenArrays = (array1, array2) => {
-//   if (!isArray(array1) || !isArray(array2)) {
-//     return 'The params should be arrays';
-//   }
-//   const intersection = arrayIntersection(array1, array2);
-//   if (intersection.length === 0) {
-//     return 'There are not matching elements';
-//   }
-//   return intersection;
-// }
+export const intersectionBetweenArrays = (array1, array2) => {
+  if (!isArray(array1) || !isArray(array2)) {
+    return 'The params should be arrays';
+  }
+  const intersection = arrayIntersection(array1, array2);
+  if (intersection.length === 0) {
+    return 'There are not matching elements';
+  }
+  return intersection;
+}
 
 // // console.log(intersectionBetweenArrays())
 // // console.log(intersectionBetweenArrays([1,2,3]));

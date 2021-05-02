@@ -18,35 +18,68 @@ describe('complexOperation - Unit Tests', () => {
   //   });
   // });
 
-  describe('calculateArea', () => {
-    it('sending an empty parameter', () => {
-      expect(complexOperations.calculateArea()).toBe('undefined is not supported');
-    });
-    
-    it('testing a non-supported figure', () => {
-      expect(complexOperations.calculateArea('rhombus')).toBe('rhombus is not supported');
-    });
+  // describe('calculateArea', () => {
+  //   it('sending an empty parameter', () => {
+  //     expect(complexOperations.calculateArea()).toBe('undefined is not supported');
+  //   });
 
-    it('testing a supported figure and undefined numbers', () => {
-      expect(complexOperations.calculateArea('square')).toBe('number1 and number2 should be numbers');
-    });
+  //   it('testing a non-supported figure', () => {
+  //     expect(complexOperations.calculateArea('rhombus')).toBe('rhombus is not supported');
+  //   });
 
-    it('testing a supported figure and invalids numbers', () => {
-      expect(complexOperations.calculateArea('square')).toBe('number1 and number2 should be numbers');
-    });
-  });
+  //   it('testing a supported figure and undefined numbers', () => {
+  //     expect(complexOperations.calculateArea('square')).toBe('number1 and number2 should be numbers');
+  //   });
+
+  //   it('testing a supported figure and invalid numbers', () => {
+  //     expect(complexOperations.calculateArea('square','Hola', 4)).toBe('number1 and number2 should be numbers');
+  //   });
+
+  //   it('testing a supported figure and valid numbers', () => {
+  //     expect(complexOperations.calculateArea('square', 4, 4)).toBe(16);
+  //   });
+
+  //   it('testing a supported figure that is not a circle and a number', () => {
+  //     expect(complexOperations.calculateArea('rectangle', 4)).toBe(0);
+  //   });
+
+  //   it('testing a circle and a number', () => {
+  //     expect(complexOperations.calculateArea('circle', 4)).toBe(Math.PI * 16);
+  //   });
+
+  // });
 
   // describe('sumGratherThan', () => {
-  //   it('first test for sumGratherThan', () => {
+  //   it('test with an empty parameters', () => {
+  //     expect(complexOperations.sumGratherThan('')).toBe('The params should be numbers');
+  //   });
 
+  //   it('test with three numbers', () => {
+  //     expect(complexOperations.sumGratherThan(1,5,10)).toBe('6 is less than 10');
+  //   });
+
+  //   it('test with three numbers', () => {
+  //     expect(complexOperations.sumGratherThan(1,5,4)).toBe('6 is grather than 4');
   //   });
   // });
 
-  // describe('intersectionBetweenArrays', () => {
-  //   it('first test for intersectionBetweenArrays', () => {
+  describe('intersectionBetweenArrays', () => {
+    it('test with empty parameters', () => {
+      expect(complexOperations.intersectionBetweenArrays('')).toBe('The params should be arrays');
+    });
 
-  //   });
-  // });
+    it('test with an only array', () => {
+      expect(complexOperations.intersectionBetweenArrays([1,2,3])).toBe('The params should be arrays');
+    });
+
+    it('test with two valids arrays', () => {
+      expect(complexOperations.intersectionBetweenArrays([1,2,3], [3,4])).toStrictEqual([3]);
+    });
+
+    it('test with two arrays empty array', () => {
+      expect(complexOperations.intersectionBetweenArrays([5,6,8], [3,4])).toStrictEqual(['There are not matching elements');
+    });
+  });
 
   // describe('sortArrayOfObjectsByKey', () => {
   //   it('first test for sortArrayOfObjectsByKey', () => {
