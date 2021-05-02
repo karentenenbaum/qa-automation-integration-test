@@ -123,24 +123,24 @@ export const intersectionBetweenArrays = (array1, array2) => {
 // // console.log(intersectionBetweenArrays([1,2,3], [5]));
 // // console.log(intersectionBetweenArrays(['test',2,3], ['test', 5]));
 
-// /**
-//  * Sort an array based on an specific key
-//  * @param {Array} array - This array should be an array of objects
-//  * @param {string} key
-//  * @returns {Array} - Sorted array
-// */
-// export const sortArrayOfObjectsByKey = (array, key) => {
-//   if (!isArray(array)) {
-//     return 'The first param should be an array';
-//   }
-//   if (!key || !isString(key)) {
-//     return 'The second param should be an string';
-//   }
-//   if (!arrayElementsAreObjectWithKey(array, key)) {
-//     return 'Some elements in the array does not have the ${key} property';
-//   }
-//   return sortArrayByKey(array, key);
-// }
+/**
+ * Sort an array based on an specific key
+ * @param {Array} array - This array should be an array of objects
+ * @param {string} key
+ * @returns {Array} - Sorted array
+*/
+export const sortArrayOfObjectsByKey = (array, key) => {
+  if (!isArray(array)) {
+    return 'The first param should be an array';
+  }
+  if (!key || !isString(key)) {
+    return 'The second param should be an string';
+  }
+  if (!arrayElementsAreObjectWithKey(array, key)) {
+    return `Some elements in the array does not have the ${key} property`;
+  }
+  return sortArrayByKey(array, key);
+}
 
 // // console.log(sortArrayOfObjectsByKey([{ name: 'Guille' }, { name: 'Rodrigo' }, { name: 'David' }], 'name'));
 // // console.log(sortArrayOfObjectsByKey(undefined, 'name'));

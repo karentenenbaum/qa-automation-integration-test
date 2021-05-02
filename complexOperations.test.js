@@ -76,16 +76,47 @@ describe('complexOperation - Unit Tests', () => {
       expect(complexOperations.intersectionBetweenArrays([1,2,3], [3,4])).toStrictEqual([3]);
     });
 
-    it('test with two arrays empty array', () => {
-      expect(complexOperations.intersectionBetweenArrays([5,6,8], [3,4])).toStrictEqual(['There are not matching elements');
+    it('test with two empty arrays', () => {
+      expect(complexOperations.intersectionBetweenArrays([], [])).toStrictEqual('There are not matching elements');
     });
   });
 
-  // describe('sortArrayOfObjectsByKey', () => {
-  //   it('first test for sortArrayOfObjectsByKey', () => {
+  describe('sortArrayOfObjectsByKey', () => {
+    it('test with valid array and key', () => {
+      const testArray =
+          [{name: 'karen', age: 29}, {name: 'marisa', age: 34}, {name: 'martin', age: 17}, {name: 'lara', age: 26}];
 
-  //   });
-  // });
+      const expectedArray =
+          [{name: 'martin', age: 17}, {name: 'lara', age: 26}, {name: 'karen', age: 29}, {name: 'marisa', age: 34}];
+
+      expect(complexOperations.sortArrayOfObjectsByKey(testArray, 'age')).toStrictEqual(expectedArray);
+    });
+
+    it('test with invalid array and valid key', () => {
+      expect(complexOperations.sortArrayOfObjectsByKey('', 'age')).toStrictEqual('The first param should be an array');
+    });
+
+    it('test with valid array and invalid key', () => {
+      const testArray =
+          [{name: 'karen', age: 29}, {name: 'marisa', age: 34}, {name: 'martin', age: 17}, {name: 'lara', age: 26}];
+      expect(complexOperations.sortArrayOfObjectsByKey(testArray, 1)).toStrictEqual('The second param should be an string');
+    });
+
+    it('test with valid array and null key', () => {
+      const testArray =
+          [{name: 'karen', age: 29}, {name: 'marisa', age: 34}, {name: 'martin', age: 17}, {name: 'lara', age: 26}];
+      expect(complexOperations.sortArrayOfObjectsByKey(testArray, '')).toStrictEqual('The second param should be an string');
+    });
+
+    it('test some elements in the array does not have the age property', () => {
+      const testArray =
+          [{name: 'karen', age: 29}, {name: 'marisa'}, {name: 'martin', age: 17}, {name: 'lara'}];
+      expect(complexOperations.sortArrayOfObjectsByKey(testArray, 'age')).toStrictEqual('Some elements in the array does not have the age property');
+    });
+
+
+
+  });
 
   // describe('numberOfOddAndEvenNumbers', () => {
   //   it('first test for numberOfOddAndEvenNumbers', () => {
